@@ -1,32 +1,37 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'; // Assurez-vous d'importer Link
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
 import { DarkModeContext } from '../../context/darkModeContext';
 import styles from './Header.module.scss';
 
 function Header() {
-    const  { dispatch } = useContext(DarkModeContext);
+    const { darkMode, dispatch } = useContext(DarkModeContext);
 
     const toggleDarkMode = () => {
         dispatch({type: 'TOGGLE'});
-    }
+    };
+
     return (
         <header className={styles.header}>
-            <Link to="/">
-                <h1 className='header-title '>Gray Zone Warfare Wiki</h1>
-            </Link>
-            <div>
-                <button
-                    className={styles.themeToggleBtn}
-                    onClick={toggleDarkMode}
-                >
-                </button>
+            <div className={styles.titleAndNav}>
+                <h1 className={styles.headerTitle}>
+                    <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>Gray Zone Warfare Wiki</Link>
+                </h1>
+                <nav>
+                    <ul>
+                        <li><a href="/quests">Quêtes</a></li>
+                        <li><a href="/maps">Maps</a></li>
+                        <li><a href="/protection">Protections</a></li>
+                        <li><a href="/ballistique">Ballistique</a></li>
+                    </ul>
+                </nav>
             </div>
-            <nav>
-                <ul>
-                    <li><Link to="/quests">Quêtes</Link></li>
-                    <li><Link to="/maps">Maps</Link></li>
-                </ul>
-            </nav>
+            <FontAwesomeIcon
+                icon={darkMode ? faSun : faMoon}
+                onClick={toggleDarkMode}
+                className={styles.themeToggleIcon}
+            />
         </header>
     );
 }
