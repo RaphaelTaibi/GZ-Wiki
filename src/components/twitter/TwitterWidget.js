@@ -1,19 +1,16 @@
-import React, { useEffect } from 'react';
+import React from 'react';
+import { TwitterTweetEmbed } from 'react-twitter-embed';
 
-const TwitterWidget = ({ username }) => {
-    useEffect(() => {
-        if(!document.getElementById('twitter-wjs')) {
-            const script = document.createElement('script');
-            script.id = 'twitter-wjs';
-            script.src = "https://platform.twitter.com/widget.js";
-            script.async= true;
-            document.body.appendChild(script);
-        }
-        
-    }, []);
+function TwitterWidget() {
+    // Liste des ID de tweets à intégrer
+    const tweetIds = ["1786428235191914648", "1720093421287899196", "1720093710539772302"];  
 
     return (
-        <a className='' href={`https://twitter.com/${username}?ref_src=twsrc%5Etfw`}>Tweets by {username}</a>
+        <div>
+            {tweetIds.map(id => (
+                <TwitterTweetEmbed key={id} tweetId={id} />
+            ))}
+        </div>
     );
 }
 

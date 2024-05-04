@@ -1,7 +1,13 @@
 import React from 'react';
+import styles from './Maps.module.scss';
 
 function Maps() {
-  return <div><h2>Maps</h2><p>Informations sur les cartes...</p></div>;
+  return (
+    <div className={styles.mapsContainer}>
+      <h2 className={styles.title}>Maps and Landing zones</h2>
+      <img className={styles.mapImage} src="/images/map/Lamang_Island.webp" alt="Maps and all landing zones" />
+    </div>
+  );
 }
 
 export default Maps;

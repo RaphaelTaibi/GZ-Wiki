@@ -1,31 +1,37 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'; // Assurez-vous d'importer Link
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
 import { DarkModeContext } from '../../context/darkModeContext';
 import styles from './Header.module.scss';
 
 function Header() {
-    const  { dispatch } = useContext(DarkModeContext);
+    const { darkMode, dispatch } = useContext(DarkModeContext);
 
     const toggleDarkMode = () => {
         dispatch({type: 'TOGGLE'});
-    }
+    };
+
     return (
         <header className={styles.header}>
-            <h1>Gray Zone Warfare Wiki</h1>
-            <div>
-                <button
-                    className={styles.themeToggleBtn}
-                    onClick={toggleDarkMode}
-                >
-                </button>
+            <div className={styles.titleAndNav}>
+                <h1 className={styles.headerTitle}>
+                    <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>Gray Zone Warfare Wiki</Link>
+                </h1>
+                <nav>
+                    <ul>
+                        <Link to="/quests">Quests</Link>
+                        <Link to="/maps">Maps</Link>
+                        <Link to="/protections">Protections</Link>
+                        <Link to="/balistics">Balistics</Link>
+                    </ul>
+                </nav>
             </div>
-            <nav>
-                <ul>
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to="/quests">Quêtes</Link></li>
-                    <li><Link to="/maps">Maps</Link></li>
-                </ul>
-            </nav>
+            <FontAwesomeIcon
+                icon={darkMode ? faSun : faMoon}
+                onClick={toggleDarkMode}
+                className={styles.themeToggleIcon}
+            />
         </header>
     );
 }

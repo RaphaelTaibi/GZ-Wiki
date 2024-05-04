@@ -1,0 +1,25 @@
+.traderContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+
+  h1, h2 {
+    text-align: center;
+  }
+
+  img {
+    max-width: 80%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+
+  .sellInfo, .buyInfo {
+    text-align: center;
+    max-width: 90%;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    color: var(--text-color-light);  // Utilisation de la variable CSS pour la couleur de texte
+  }
+}
