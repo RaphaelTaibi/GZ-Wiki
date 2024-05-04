@@ -11,7 +11,9 @@ function Header() {
     }
     return (
         <header className={styles.header}>
-            <h1>Gray Zone Warfare Wiki</h1>
+            <Link to="/">
+                <h1 className='header-title '>Gray Zone Warfare Wiki</h1>
+            </Link>
             <div>
                 <button
                     className={styles.themeToggleBtn}
@@ -21,7 +23,6 @@ function Header() {
             </div>
             <nav>
                 <ul>
-                    <li><Link to="/">Home</Link></li>
                     <li><Link to="/quests">Quêtes</Link></li>
                     <li><Link to="/maps">Maps</Link></li>
                 </ul>

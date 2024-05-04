@@ -15,7 +15,7 @@ function Article() {
             ))}
             </div>
             <div className='twitter-feed'>
-                <TwitterWidget username="MADFINGERGames" />
+                <TwitterWidget />
             </div>
         </div>
     );
