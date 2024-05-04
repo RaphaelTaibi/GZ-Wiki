@@ -1,0 +1,22 @@
+Anton Jackson alias Gunny  
+Sells: Primary Weapons, Secondary Weapons, Ammunition, Magazines, Weapon parts, Attachments, Throwables and Tools.
+Specifically specializing in NATO variant weapons Also Sellss 5.56 ammo types
+Buys: Primary Weapons, Secondary Weapons, Ammunition, Magazines, Weapon parts, Attachments, Throwables and Tools.
+
+
+Unknown alias lab Rat
+Sells: Medkits, Medication, Drinks, Food and Tools.
+Buys: Medkits, Medication, Drinks, Food and Tools.
+
+Laya Hoang alias Artisan 
+Sells: Primary Weapons, Secondary Weapons, Ammunition, Magazines, Weapon parts, Attachments, Throwables and Tools.
+Specifically specializing in AK and Eastern weapon variants. Also sells 7.62 ammo types
+Buys: Primary Weapons, Secondary Weapons, Ammunition, Magazines, Weapon parts, Attachments, Throwables and Tools.
+
+Unknown alias Turncoat 
+Sells: AK74 Variants, SKS, 5.45 AK Attachments, Helmets, Poison
+Buys: Weapons, Ammunition and Magazines, Weapon parts, Helmets.
+
+James Miller alias Banshee
+Sells: Unknown
+Buys: Weapons, Ammunition and Magazines, Weapon parts, Containers.

@@ -25,18 +25,16 @@
                 padding: 0;
                 margin: 0;
 
-                li {
-                    padding-top: 20px;
-                    margin-right: 20px;
-                    &:last-child {
-                        margin-right: 0;
+                a {
+                    padding: 20px; // appliquer un padding pour espacer les liens
+                    margin-right: 20px; // marge à droite pour séparer les liens
+                    text-decoration: none;
+                    color: rgba(255, 255, 255, 0.678); // couleur du texte
+                    &:hover, &:focus, &:active, &:visited {
+                        color: rgba(255, 255, 255, 0.678); // couleur pour différents états
                     }
-                    a {
-                        text-decoration: none;
-                        color: rgba(255, 255, 255, 0.678);
-                        &:hover, &:focus, &:active, &:visited {
-                            color: rgba(255, 255, 255, 0.678);
-                        }
+                    &:last-child {
+                        margin-right: 0; // pas de marge à droite pour le dernier élément
                     }
                 }
             }

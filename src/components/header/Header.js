@@ -20,10 +20,10 @@ function Header() {
                 </h1>
                 <nav>
                     <ul>
-                        <li><a href="/quests">Quêtes</a></li>
-                        <li><a href="/maps">Maps</a></li>
-                        <li><a href="/protection">Protections</a></li>
-                        <li><a href="/ballistique">Ballistique</a></li>
+                        <Link to="/quests">Quests</Link>
+                        <Link to="/maps">Maps</Link>
+                        <Link to="/protections">Protections</Link>
+                        <Link to="/balistics">Balistics</Link>
                     </ul>
                 </nav>
             </div>

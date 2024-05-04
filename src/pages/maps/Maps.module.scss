@@ -1,0 +1,34 @@
+.mapsContainer {
+    display: flex;
+    flex-direction: column;
+    min-height: 80vh; // Hauteur de la vue pour pousser le footer en bas
+   
+  
+    .title {
+      text-align: center;
+      margin-top: 20px; // Espace entre le header et le titre
+      padding-bottom: 5%;
+    }
+  
+    .mapImage {
+      display: block; // Éviter les marges d'alignement par défaut des images inline
+      margin: 20px auto; // Centrage horizontal et marge verticale
+      max-width: 90%; // Limiter la largeur à 90% pour éviter la pixelisation
+      height: auto; // Garder le ratio de l'image
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1); // Un léger ombrage pour mieux faire ressortir l'image
+      justify-content: center;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .mapsContainer {
+      .title {
+        margin-top: 10px; // Moins d'espace sur les appareils mobiles
+      }
+  
+      .mapImage {
+        max-width: 95%; // Permettre une plus grande largeur sur les appareils plus petits
+      }
+    }
+  }
+  

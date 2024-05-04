@@ -1,0 +1,47 @@
+// src/components/Quests.module.scss
+.traderImages {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+  a {
+    width: calc(33.333% - 20px); // Trois éléments par ligne avec un peu d'espace
+    margin: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px; // Hauteur fixe pour tous les cadres
+
+    img {
+      max-width: 100%; // Assure que l'image ne dépasse pas du cadre
+      max-height: 100%; // Assure que l'image ne dépasse pas de la hauteur fixe
+      width: auto;
+      height: auto;
+      transition: transform 0.3s ease;
+      border: 3px solid #ccc; // Cadre autour de l'image
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+
+    &:nth-child(6) img {
+      transform: scale(1); // Augmenter la taille du sixième trader sans affecter le cadre
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+}
+
+.factionQuests {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  a {
+    margin: 5px 0;
+  }
+}

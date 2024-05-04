@@ -1,4 +1,9 @@
 /* Reset des marges et paddings pour éviter les espaces indésirables */
+:root {
+  --text-color-light: #ddd;  // Couleur de texte pour fond sombre
+  --text-color-dark: #333;   // Couleur de texte pour fond clair
+}
+
 * {
   margin: 0;
   padding: 0;
