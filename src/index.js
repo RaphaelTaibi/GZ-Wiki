@@ -1,8 +1,10 @@
 import React from 'react';
+import './style/style.scss';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import { DarkModeContextProvider } from './context/darkModeContext';
 import { FactionProvider } from './context/FactionContext';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

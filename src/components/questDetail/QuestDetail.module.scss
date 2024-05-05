@@ -1,0 +1,63 @@
+.questDetailContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px auto; // Centre horizontalement le conteneur avec une marge automatique
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    max-width: 960px; // Limite la largeur totale du conteneur pour éviter l'étirement
+
+    h2 {
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #666;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    .imageContainer {
+      margin-top: 20px;
+      width: 100%;
+      display: flex;
+      justify-content: center; // Centre les images horizontalement
+      flex-wrap: wrap;
+      gap: 20px; // Espacement entre les images
+
+      .lazy-load-image-background {
+        margin: 5px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        overflow: hidden;
+        max-width: 500px; // Largeur maximale de chaque image
+        width: 100%; // Permet aux images de s'adapter à la largeur du conteneur
+
+        img {
+          width: 100%; // Assure que l'image remplit le conteneur
+          height: auto; // Maintient le rapport hauteur/largeur
+          transition: transform 0.3s ease;
+          &:hover {
+            transform: scale(1.05); // Effet de zoom léger au survol
+          }
+        }
+      }
+    }
+  }
+
+  // Styles pour le mode sombre
+  body.dark  {
+    background-color: #333;
+    color: #fff;
+
+    h2, p {
+      color: #ccc;
+    }
+
+    .imageContainer .lazy-load-image-background {
+      border-color: #555;
+    }
+  }

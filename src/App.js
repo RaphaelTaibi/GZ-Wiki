@@ -5,10 +5,12 @@ import { DarkModeContext } from './context/darkModeContext';
 import Header from './components/header/Header';
 import Footer from './components/footer/Footer';
 import Article from './components/article/Article';
+import FactionDetail from "./components/factionsDetail/FactionsDetail";
 import TraderDetail from './components/tradersDetail/TraderDetail';
+import QuestDetail from './components/questDetail/QuestDetail';
 import Quests from './pages/quests/Quest';
 import Maps from './pages/maps/Maps';
-import './style/style.scss';
+
 
 function App() {
   const { darkMode } = useContext(DarkModeContext);
@@ -26,7 +28,9 @@ function App() {
         <Routes>
           <Route path="/quests" element={<Quests/>} />
           <Route path="/maps" element={<Maps />} />
+          <Route path="/:factionId" element={<FactionDetail />} />*
           <Route path="/traders/:traderId" element={<TraderDetail />} />
+          <Route path="/quests/:factionId/:questId" element={<QuestDetail />} />
           <Route path="/" element={<Article />} />
         </Routes>
       </Router>

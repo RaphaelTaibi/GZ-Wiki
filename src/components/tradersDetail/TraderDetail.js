@@ -1,6 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import styles from './TraderDetail.module.scss';
+import { Link } from 'react-router-dom'
 
 function TraderDetail() {
   const { traderId } = useParams();
@@ -11,7 +12,24 @@ function TraderDetail() {
       alias: "Handshake",
       imageUrl: "/images/traders/trader1.webp",
       sell: "Sells: Helmets, Glasses, Hats, Headphones, Plate Carriers, Vests, Backpacks, Belts, Tactical Rigs and Tools.",
-      buy: "Buys: Helmets, Glasses, Hats, Headphones, Plate Carriers, Vests, Backpacks, Belts, Tactical Rigs, Tools and Secure Lockboxes."
+      buy: "Buys: Helmets, Glasses, Hats, Headphones, Plate Carriers, Vests, Backpacks, Belts, Tactical Rigs, Tools and Secure Lockboxes.",
+      quests: [
+        {id: 1, name: "First Recon"},
+        {id: 2, name: "Little Bird Down"},
+        {id: 3, name: "Restoring Order"},
+        {id: 4, name: "Rat's Nest"},
+        {id: 5, name: "Helping Hand"},
+        {id: 6, name: "Radio Silence"},
+        {id: 7, name: "First Hit"},
+        {id: 8, name: "True Grit"},
+        {id: 9, name: "The Shadow over Ban Pa"},
+        {id: 10, name: "Shooting Gallery"},
+        {id: 11, name: "Up to Snuff"},
+        {id: 12, name: "One Shot, One Kill"},
+        {id: 13, name: "Manifest Destiny"},
+        {id: 14, name: "Rebel Scum"}
+
+      ]
     },
     trader2: {
       name: "Anton Jackson",
@@ -59,6 +77,16 @@ function TraderDetail() {
       <img src={trader.imageUrl} alt={`${trader.name} alias ${trader.alias}`} />
       <p className={styles.sellInfo}>{trader.sell}</p>
       <p className={styles.buyInfo}>{trader.buy}</p>
+      <div className={styles.quests}>
+        <h3>Quests Available:</h3>
+        <ul>
+            {trader.quests.map(quest => (
+              <li key={quest.id}>
+                  <Link to={`/quests/${quest.id}`}>{quest.name}</Link>
+              </li>
+            ))}
+        </ul>
+      </div>
     </div>
   );
 }
