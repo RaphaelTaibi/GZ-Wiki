@@ -1,51 +1,75 @@
-import React, { useContext } from 'react';
-import styles from './FactionDetail.module.scss';
-import { useParams, useNavigate, Link } from 'react-router-dom';
-
-import quests from '../../data/quest'; // Assurez-vous que le chemin vers vos données de quête est correct
-import FactionContext from '../../context/FactionContext';
+import React, { useEffect, useState } from "react";
+import { useParams, useNavigate, Link } from "react-router-dom";
+import quests from "../../data/quest"; 
+import { useFaction } from "../../context/FactionContext";
+import { getFactionData } from "../../service/factionService";
 
 function FactionDetail() {
-    let { factionId } = useParams();
-    console.log(factionId);
-    const { resetFaction } = useContext(FactionContext);
-    const navigate = useNavigate();
+  const { factionId } = useParams();
+  const { resetFaction } = useFaction();
+  const navigate = useNavigate();
 
-    const factionQuests = quests.specific[factionId.toLowerCase()] || [];
-    const commonQuests = quests.common || [];
-  
-   
+  const [factionInfo, setFactionInfo] = useState({});
+  const factionQuests = quests.specific[factionId?.toLowerCase()] || [];
+  const commonQuests = quests.common || [];
 
+  useEffect(() => {
+    if (factionId && factionId.toLowerCase() !== "common") {
+      const data = getFactionData(factionId);
+      if (data) {
+        setFactionInfo(data);
+      } else {
+        console.error("Faction data not found");
+        navigate("*");
+      }
+    }
+  }, [factionId, navigate]);
 
-    const handleReset = () => {
-        resetFaction();  // Réinitialiser la faction à 'none'
-        navigate('/quests');  // Rediriger l'utilisateur vers la page des quêtes <Link to={`/quests/${factionId}/${quest.id}`}>{quest.name}</Link>
-    
-    };
+  const handleReset = () => {
+    resetFaction();
+    navigate("/quests");
+  };
 
-    return (
-        <div className={styles.factionContainer}>
-            <h1>Faction: {factionId}</h1>
-            <h2>Specific Quests</h2>
-            <ul>
-                {factionQuests.map((quest, index) => (
-                    <li key={index}>
-                        <Link to={`/quests/${factionId}/${quest.id}`}>{quest.name}</Link>
-                    </li>
-                ))}
-            </ul>
-            <h2>Common Quests</h2>
-            <p corlor="yellow">Task are same Locatation for ALL Faction</p>
-            <ul>
-                {commonQuests.map((quest, index) => (
-                    <li key={index}>
-                        <Link to={`/quests/common/${quest.id}`}>{quest.name}</Link>
-                    </li>
-                ))}
-            </ul>
-            <button onClick={handleReset}>Reset Faction Selection</button>
+  return (
+    <div className="max-w-4xl mx-auto p-5 bg-neutral-500 shadow-lg rounded-lg">
+      <div className="flex justify-between items-center mb-5">
+        <h1 className="text-3xl font-bold text-center">{factionInfo.name}</h1>
+        <img src={`/images/factions/${factionId.toLowerCase()}.webp`} alt="Faction Logo" className="w-24 h-24 rounded-full" />
+      </div>
+      <div className="bg-neutral-600 p-3 shadow-sm mb-5 rounded-lg">
+        <p className="text-white">{factionInfo.description}</p>
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <h2 className="text-xl font-semibold mb-3">Specific Quests</h2>
+          <ul className="list-none p-0">
+            {factionQuests.map((quest, index) => (
+              <li key={index} className="mb-2">
+                <Link to={`/quests/faction/${factionId}/${quest.id}`} className="text-white hover:text-cyan-900 block">
+                  {quest.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
-    );
+        <div>
+          <h2 className="text-xl font-semibold mb-3">Common Quests</h2>
+          <ul className="list-none p-0">
+            {commonQuests.map((quest, index) => (
+              <li key={index} className="mb-2">
+                <Link to={`/quests/common/${quest.id}`} className="text-white hover:text-cyan-900 block">
+                  {quest.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+      <button onClick={handleReset} className="py-2 px-4 bg-red-500 text-white rounded hover:bg-red-700 absolute right-5 bottom-5">
+        Reset Faction Selection
+      </button>
+    </div>
+  );
 }
 
 export default FactionDetail;

@@ -1,39 +1,46 @@
-import React, { useContext } from 'react';
-import { Link } from 'react-router-dom'; // Assurez-vous d'importer Link
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
-import { DarkModeContext } from '../../context/darkModeContext';
-import styles from './Header.module.scss';
+import React from "react";
+import { Link } from "react-router-dom";
 
 function Header() {
-    const { darkMode, dispatch } = useContext(DarkModeContext);
-
-    const toggleDarkMode = () => {
-        dispatch({type: 'TOGGLE'});
-    };
-
-    return (
-        <header className={styles.header}>
-            <div className={styles.titleAndNav}>
-                <h1 className={styles.headerTitle}>
-                    <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>Gray Zone Warfare Wiki</Link>
-                </h1>
-                <nav>
-                    <ul>
-                        <Link to="/quests">Quests</Link>
-                        <Link to="/maps">Maps</Link>
-                        <Link to="/protections">Protections</Link>
-                        <Link to="/balistics">Balistics</Link>
-                    </ul>
-                </nav>
-            </div>
-            <FontAwesomeIcon
-                icon={darkMode ? faSun : faMoon}
-                onClick={toggleDarkMode}
-                className={styles.themeToggleIcon}
-            />
-        </header>
-    );
+  return (
+    <header className="bg-stone-400 text-white flex flex-col items-center px-5 py-3 space-y-3">
+      <Link
+        to="/"
+        className="text-xl no-underline text-white hover:text-cyan-900"
+      >
+        Gray Zone Warfare Wiki
+      </Link>
+      <nav>
+        <ul className="flex space-x-4">
+          <li>
+            <Link to="/social" className="hover:text-cyan-900">
+              Social
+            </Link>
+          </li>
+          <li>
+            <Link to="/quests" className="hover:text-cyan-900">
+              Quests
+            </Link>
+          </li>
+          <li>
+            <Link to="/maps" className="hover:text-cyan-900">
+              Maps
+            </Link>
+          </li>
+          <li>
+            <Link to="/protections" className="hover:text-cyan-900">
+              Protections
+            </Link>
+          </li>
+          <li>
+            <Link to="/balistics" className="hover:text-cyan-900">
+              Ballistics
+            </Link>
+          </li>
+        </ul>
+      </nav>
+    </header>
+  );
 }
 
 export default Header;

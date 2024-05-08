@@ -1,13 +1,17 @@
-import React from 'react';
-import styles from './Maps.module.scss';
-import MapDetail from '../../components/mapDetail/MapDetail';
+import React from "react";
+//import styles from "./Maps.module.scss";
+import MapDetail from "../../components/mapDetail/MapDetail";
 
 function Maps() {
   return (
-    <div className={styles.mapsContainer}>
+    <div className="flex flex-col items-center p-5 min-h-[80vh] mt-5">
       <MapDetail />
-      <h2 className={styles.title}>Maps and Landing zones</h2>
-      <img className={styles.mapImage} src="/images/map/Lamang_Island.webp" alt="Maps and all landing zones" />
+      <h2 className="mt-20 pb-5 text-center text-white font-extrabold text-3xl">Maps and Landing zones</h2>
+      <img
+        className="w-[90%] max-w-[1820px] h-auto shadow-lg my-5 md:max-w-[95%]"
+        src="/images/map/Lamang_Island.webp"
+        alt="Maps and all landing zones"
+      />
     </div>
   );
 }

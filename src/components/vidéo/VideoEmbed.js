@@ -2,16 +2,19 @@ import React from 'react';
 
 const VideoEmbed = ({ videoId }) => {
     const embedUrl = `https://www.youtube.com/embed/${videoId}`;
-    
+
     return (
-        <div className="video-embed-container">
-            <iframe className='iframe'
+        <div className="w-full aspect-video overflow-hidden">
+            <iframe 
+                className="w-full h-full"
                 src={embedUrl}
-                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
                 title="Embedded YouTube Video"
             ></iframe>
         </div>
     );
 };
 
-export default VideoEmbed;
+export default VideoEmbed

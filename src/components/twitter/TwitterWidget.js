@@ -6,7 +6,7 @@ function TwitterWidget() {
     const tweetIds = ["1786428235191914648", "1720093421287899196", "1720093710539772302"];  
 
     return (
-        <div>
+        <div className=''>
             {tweetIds.map(id => (
                 <TwitterTweetEmbed key={id} tweetId={id} />
             ))}

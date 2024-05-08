@@ -1,90 +1,66 @@
-import React from 'react';
-import { useParams } from 'react-router-dom';
-import styles from './TraderDetail.module.scss';
-import { Link } from 'react-router-dom'
+import React, { useEffect, useState } from "react";
+import { useParams, useNavigate, Link } from "react-router-dom";
+import quests from "../../data/quest";
+import traders from "../../data/traders";
+import FactionCarousel from "../caroussel/FactionCarousel";
 
 function TraderDetail() {
   const { traderId } = useParams();
+  const navigate = useNavigate();
+  const [isValid, setIsValid] = useState(true);
+  const [trader, setTrader] = useState(null);
 
-  const traders = {
-    trader1: {
-      name: "Lewis Pell",
-      alias: "Handshake",
-      imageUrl: "/images/traders/trader1.webp",
-      sell: "Sells: Helmets, Glasses, Hats, Headphones, Plate Carriers, Vests, Backpacks, Belts, Tactical Rigs and Tools.",
-      buy: "Buys: Helmets, Glasses, Hats, Headphones, Plate Carriers, Vests, Backpacks, Belts, Tactical Rigs, Tools and Secure Lockboxes.",
-      quests: [
-        {id: 1, name: "First Recon"},
-        {id: 2, name: "Little Bird Down"},
-        {id: 3, name: "Restoring Order"},
-        {id: 4, name: "Rat's Nest"},
-        {id: 5, name: "Helping Hand"},
-        {id: 6, name: "Radio Silence"},
-        {id: 7, name: "First Hit"},
-        {id: 8, name: "True Grit"},
-        {id: 9, name: "The Shadow over Ban Pa"},
-        {id: 10, name: "Shooting Gallery"},
-        {id: 11, name: "Up to Snuff"},
-        {id: 12, name: "One Shot, One Kill"},
-        {id: 13, name: "Manifest Destiny"},
-        {id: 14, name: "Rebel Scum"}
+  useEffect(() => {
+    if (!traderId || traderId.trim() === "") {
+      console.error("No traderId provided");
+      setIsValid(false);
+      navigate('/404');
+      return;
+    }
 
-      ]
-    },
-    trader2: {
-      name: "Anton Jackson",
-      alias: "Gunny",
-      imageUrl: "/images/traders/trader2.webp",
-      sell: 'Sells: Primary Weapons, Secondary Weapons, Ammunition, Magazines, Weapon parts, Attachments, Throwables and Tools. Specifically specializing in NATO variant weapons Also Sellss 5.56 ammo types',
-      buy: "Buys: Primary Weapons, Secondary Weapons, Ammunition, Magazines, Weapon parts, Attachments, Throwables and Tools.."
-    },
-    trader3: {
-      name: "Unknown",
-      alias: "Lab Rat",
-      imageUrl: "/images/traders/trader3.webp",
-      sell: "Sells: Medkits, Medication, Drinks, Food and Tools.",
-      buy: "Buys: Medkits, Medication, Drinks, Food and Tools."
-    },
-    trader4: {
-      name: "Laya Hoang",
-      alias: "Artisan",
-      imageUrl: "/images/traders/trader4.webp",
-      sell: "Sells: Primary Weapons, Secondary Weapons, Ammunition, Magazines, Weapon parts, Attachments, Throwables and Tools. Specifically specializing in AK and Eastern weapon variants. Also sells 7.62 ammo types",
-      buy: "Buys: Primary Weapons, Secondary Weapons, Ammunition, Magazines, Weapon parts, Attachments, Throwables and Tools."
-    },
-    trader5: {
-      name: "Unknown",
-      alias: "Turncoat",
-      imageUrl: "/images/traders/trader5.webp",
-      sell: "Sells: AK74 Variants, SKS, 5.45 AK Attachments, Helmets, Poison.",
-      buy: "Buys: Weapons, Ammunition and Magazines, Weapon parts, Helmets."
-    },
-    trader6: {
-      name: "James Miller",
-      alias: "Banshee",
-      imageUrl: "/images/traders/trader6.webp",
-      sell: "Sells: Unknown.",
-      buy: "Buys: Weapons, Ammunition and Magazines, Weapon parts, Containers."
-    },
-  };
+    const traderIndex = traderId.replace("trader", "");
+    const validId = parseInt(traderIndex, 10);
+    const traderKey = `trader${validId}`;
 
-  const trader = traders[traderId];
+    if (!validId || validId < 1 || validId > 6 || !traders[traderKey] || !traders[traderKey].alias) {
+      console.error("Invalid traderId or no trader found for this ID:", traderId);
+      setIsValid(false);
+      navigate("/404");
+    } else {
+      setTrader(traders[traderKey]);
+    }
+  }, [traderId, navigate]);
+
+  if (!isValid || !trader) {
+    return null;
+  }
+
+  const allFactionsQuests = Object.values(quests.specific).flat();
+  const traderFactionQuests = allFactionsQuests.filter(quest => quest.trader === trader.alias);
+  const commonQuests = Object.values(quests.common).flat();
+  const traderCommonQuests = commonQuests.filter(quest => quest.trader === trader.alias);
 
   return (
-    <div className={styles.traderContainer}>
-      <h1>{trader.name}</h1>
-      <h2>Alias {trader.alias}</h2>
-      <img src={trader.imageUrl} alt={`${trader.name} alias ${trader.alias}`} />
-      <p className={styles.sellInfo}>{trader.sell}</p>
-      <p className={styles.buyInfo}>{trader.buy}</p>
-      <div className={styles.quests}>
+    <div className="flex flex-col items-center p-5">
+      <h1 className="text-center font-bold text-2xl">{trader.name}</h1>
+      <h2 className="text-center font-semibold text-2xl">Alias {trader.alias}</h2>
+      <img src={trader.imageUrl} alt={`${trader.name} alias ${trader.alias}`} className="w-4/5 max-w-xs md:max-w-lg lg:max-w-xl mx-auto my-5 rounded-lg border-2 border-gray-300" />
+      <p className="text-center max-w-4/5 mx-auto mb-2 text-lg">{trader.sell}</p>
+      <p className="text-center max-w-4/5 mx-auto mb-2 text-lg">{trader.buy}</p>
+      <div className="text-center mt-5">
         <h3>Quests Available:</h3>
-        <ul>
-            {trader.quests.map(quest => (
-              <li key={quest.id}>
-                  <Link to={`/quests/${quest.id}`}>{quest.name}</Link>
-              </li>
-            ))}
+        <ul className="list-none p-0">
+          {traderFactionQuests.map((quest, index) => (
+            <li key={index} className="py-1">
+              <FactionCarousel questId={quest.id} questName={quest.name} />
+            </li>
+          ))}
+          <p>!! Task are same coordinate and zone for ALL faction !! care you can have PVP</p>
+          {traderCommonQuests.map((quest, index) => (
+            <li key={index} className="py-1">
+              <Link to={`/quests/common/${quest.id}`}>{quest.name}</Link>
+            </li>
+          ))}
         </ul>
       </div>
     </div>
