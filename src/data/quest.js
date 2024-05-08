@@ -2,12 +2,626 @@ const quests = {
   common: [
     {
       id: 17,
-      name: "Quest 17",
+      name: "On the Range",
       trader: "Gunny",
-      description: "Description 17",
-      images: ["/images/quest/17/quest17_map.jpg"],
+      description: [
+        "On The Range Shooting Lanes Location - 159 168",
+        "On The Range Dumping Ground Location - 159 167",
+        "On The Range Motel Location - 160 167",
+      ],
+      images: [
+        "/images/quest/17/quest17_map.jpg",
+        "/images/quest/17/3236343972_preview_25.jpg",
+        "/images/quest/17/3236343972_preview_26.jpg",
+      ],
+      requirement: "",
     },
-    { id: 18, name: "Quest 18", description: "Description 18", images: [""] },
+    {
+      id: 18,
+      name: "New Neighbours Intel",
+      trader: "",
+      description: " New Neighbours Intel Location - 142 121",
+      images: [
+        "/images/quest/18/3236343972_preview_27.jpg",
+        "/images/quest/18/3236343972_preview_27 2.jpg",
+      ],
+      requirement: "in the bunker at -1",
+    },
+    {
+      id: 19,
+      name: "The Shadow Over Ban Pa I",
+      trader: "",
+      description: [
+        "The Shadow Over Ban Pa | SOUTHERN - 204 136",
+        "The Shadow Over Ban Pa | NORTHERN - 205 138",
+      ],
+      images: [
+        "/images/quest/19/3236343972_preview_32.jpg",
+        "/images/quest/19/3236343972_preview_31.jpg",
+        "/images/quest/19/3236343972_preview_33.jpg",
+        "/images/quest/19/3236343972_preview_34.jpg",
+      ],
+      requirement: "",
+    },
+    {
+      id: 20,
+      name: "The Negotiator",
+      trader: "Gunny",
+      description: "The Negotiator - 142 121",
+      images: [
+        "/images/quest/20/3236343972_preview_27.jpg",
+        "/images/quest/20/3236343972_preview_100.jpg",
+      ],
+      requirement: " In the bunker at -2, you need YBL OFFICE 02 KEY",
+    },
+    {
+      id: 21,
+      name: "Guns & Ammo",
+      trader: "Gunny",
+      description: "Guns & Ammo - 159 168",
+      images: [
+        "/images/quest/21/3236343972_preview_-33.jpg",
+        "/images/quest/21/3236343972_preview_P.jpg",
+        "/images/quest/21/3236343972_preview_PP.jpg",
+        "/images/quest/21/3236343972_preview_OOO.jpg",
+      ],
+      requirement: "You need HP WEP KEY",
+    },
+    {
+      id: 22,
+      name: "True Grit",
+      trader: "",
+      description: "Coordinate (160; 167)",
+      images: [
+        "/images/quest/22/3236343972_preview_-32.jpg",
+        "/images/quest/22/3236343972_preview_O.jpg",
+        "/images/quest/22/3236343972_preview_OO.jpg",
+        "/images/quest/22/3236343972_preview_AAAA.jpg",
+      ],
+      requirement: "You need Motel 102 Key",
+    },
+    {
+      id: 23,
+      name: "It's In The Water I",
+      trader: "",
+      description:
+        "Collect avian tissue samples - Coordinate (205; 136), Collect water samples from a well - Coordinate (205; 137), Collect ground samples from a mound of soil - Coordinate (206; 137)",
+      images: [
+        "/images/quest/23/3236343972_preview_A.jpg",
+        "/images/quest/23/3236343972_preview_105.jpg",
+        "/images/quest/23/3236343972_preview_AA.jpg",
+        "/images/quest/23/3236343972_preview_106.jpg",
+        "/images/quest/23/3236343972_preview_B.jpg",
+        "/images/quest/23/3236343972_preview_107.jpg",
+      ],
+      requirement: "",
+    },
+    {
+      id: 24,
+      name: "Uninvited Guests",
+      trader: "",
+      description: "Coordinate (205; 137)",
+      images: ["/images/quest/24/3236343972_preview_103.jpg"],
+      requirement: "You have to kill 20 bots in Ban Pa",
+    },
+    {
+      id: 25,
+      name: "Save The Rebellion",
+      trader: "",
+      description:
+        "Collect the flash drive at the command tent in the Base Camp, Place the flash drive in the guardhouse",
+      images: [
+        "/images/quest/25/3236343972_preview_101.jpg",
+        "/images/quest/25/3236343972_preview_102.jpg",
+        "/images/quest/25/3236343972_preview_104.jpg",
+        "/images/quest/25/3236343972_preview_27 2.jpg",
+      ],
+      requirement: "",
+    },
+    {
+      id: 26,
+      name: "Shortcut",
+      trader: "",
+      description: "In the bunker at -2 in the debris - Coordinate (142; 121)",
+      images: [
+        "/images/quest/26/3236343972_preview_image_2024-05-02_161627082.png",
+      ],
+      requirement: "",
+    },
+    {
+      id: 27,
+      name: "Warm Welcome",
+      trader: "",
+      description: "Coordinate (204; 136)",
+      images: [
+        "/images/quest/27/3236343972_preview_C.jpg",
+        "/images/quest/27/3236343972_preview_Warm Welcome.jpg",
+      ],
+      requirement:
+        "You have to kill the boss in town of Ban Pa. The boss spawn seems to be constant at the stilted houses",
+    },
+    {
+      id: 28,
+      name: "At The Mounds Of Madness Part.1",
+      trader: "",
+      description:
+        "Find an ominous mural - Coordinate (205; 135), Find an eerie mural - Coordinate (204; 137), Find a chilling mural - Coordinate (206; 138), Find a disturbing statue - Coordinate (207; 137)",
+      images: [
+        "/images/quest/28/3236343972_preview_E.jpg",
+        "/images/quest/28/3236343972_preview_200.jpg",
+
+        "/images/quest/28/3236343972_preview_DD.jpg",
+        "/images/quest/28/3236343972_preview_201.jpg",
+
+        "/images/quest/28/3236343972_preview_204.jpg",
+        "/images/quest/28/3236343972_preview_205.jpg",
+
+        "/images/quest/28/3236343972_preview_203.jpg",
+        "/images/quest/28/3236343972_preview_202.jpg",
+      ],
+      requirement: "",
+    },
+    {
+      id: 29,
+      name: "At The Mounds Of Madness Part.2",
+      trader: "",
+      description: "Coordinate (205; 137)",
+      images: [
+        "/images/quest/29/3236343972_preview_EE.jpg",
+        "/images/quest/29/3236343972_preview_Over Ban Pa II.jpg",
+      ],
+      requirement: "You have to choose between At The Mounds Of Madness II",
+    },
+    {
+      id: 30,
+      name: "The Shadow Over Ban Part.2",
+      trader: "",
+      description: "Coordinate (205; 137)",
+      images: [
+        "/images/quest/30/3236343972_preview_EE (1).jpg",
+        "/images/quest/30/3236343972_preview_Over Ban Pa II.jpg",
+      ],
+      requirement: "You have to choose between The Shadow Over Ban Pa II ",
+    },
+    {
+      id: 31,
+      name: "Shooting Gallery",
+      trader: "",
+      description: "Coordinate (159; 168)",
+      images: ["/images/quest/31/3236343972_preview_F.jpg"],
+      requirement: "You have to kill 20 bots at Hunter's Paradise",
+    },
+    {
+      id: 32,
+      name: "The Brave",
+      trader: "",
+      description:
+        "Behind the body on post at the ground - Coordinate (159; 168)",
+      images: [
+        "/images/quest/32/3236343972_preview_FF.jpg",
+        "/images/quest/32/3236343972_preview_The Brave.jpg",
+      ],
+      requirement: "",
+    },
+    {
+      id: 33,
+      name: "Up To Snuff",
+      trader: "",
+      description:
+        "In the building on the desk at the right - Coordinate (160; 168)",
+      images: [
+        "/images/quest/33/3236343972_preview_G.jpg",
+        "/images/quest/33/3236343972_preview_AAA.jpg",
+        "/images/quest/33/3236343972_preview_BBB.jpg",
+      ],
+      requirement: "",
+    },
+    {
+      id: 34,
+      name: "Final Liberation",
+      trader: "",
+      description:
+        "You have to kill the boss with a blue Bandana in the bunker - Coordinate (142; 121)",
+      images: [
+        "/images/quest/34/3236343972_preview_27.jpg",
+        "/images/quest/34/3236343972_preview_image_2024-05-02_160743246.png",
+      ],
+      requirement: "",
+    },
+    {
+      id: 35,
+      name: "Check Out Computers",
+      trader: "",
+      description: "In the bunker at -2 / Server room - Coordinate (142; 121)",
+      images: [
+        "/images/quest/35/3236343972_preview_27 (1).jpg",
+        "/images/quest/35/3236343972_preview_image_2024-05-02_161106614.png",
+        "/images/quest/35/3236343972_preview_image_2024-05-02_160929195.png",
+      ],
+      requirement: "",
+    },
+    {
+      id: 36,
+      name: "It's In The Water II",
+      trader: "",
+      description: "Coordinate (205; 137)",
+      images: [
+        "/images/quest/36/3236343972_preview_EE.jpg",
+        "/images/quest/36/3236343972_preview_It's In The Water II.jpg",
+      ],
+      requirement: "You need ELDER KEY",
+    },
+    {
+      id: 37,
+      name: "Out Of The Blue",
+      trader: "",
+      description: "Coordinate (203; 116)",
+      images: [
+        "/images/quest/37/3236343972_preview_GG.jpg",
+        "/images/quest/37/3236343972_preview_image_2024-05-02_174613925.png",
+      ],
+      requirement: "",
+    },
+    {
+      id: 38,
+      name: "Duty To The Country",
+      trader: "",
+      description:
+        "You are able to drop down through the ventilation-shaft from outside, outside the wall on the western side, there is a small fenced-off area with an open gate where you can drop down into the bunker to get directly into the correct area of the bunker - Coordinate (142; 122)",
+      images: [
+        "/images/quest/38/3236343972_preview_H.jpg",
+        "/images/quest/38/3236343972_preview_HH.jpg",
+        "/images/quest/38/3236343972_preview_I.jpg",
+        "/images/quest/38/3236343972_preview_image_2024-05-02_135310510.png",
+      ],
+      requirement: "",
+    },
+    {
+      id: 39,
+      name: "Rebel Scum",
+      trader: "",
+      description: "You have to kill 20 bots in the bunker - Coordinate (142; 121)",
+      images: ["/images/quest/39/3236343972_preview_27.jpg"],
+      requirement: "",
+    },
+    {
+      id: 40,
+      name: "One Shot One Kill",
+      trader: "",
+      description:
+        "You have to kill the boss with a Cap and purple tee-shirt at Hunter's Paradise. The boss patrols the area around Shooting-range and Restaurant - Coordinate (159; 168)",
+      images: [
+        "/images/quest/40/3236343972_preview_II.jpg",
+        "/images/quest/40/3236343972_preview_J.jpg",
+
+      ],
+      requirement: "",
+    },
+    {
+      id: 41,
+      name: "Carnivore",
+      trader: "",
+      description:
+        "The refrigerator in the back of the restaurant bottom left corner. In there look at the 'food' in the top shelf of the fridge - Coordinate (159; 168)",
+      images: [
+        "/images/quest/41/3236343972_preview_JJ.jpg",
+        "/images/quest/41/3236343972_preview_steamuserimages-a.akamaihd5.jpg",
+        "/images/quest/41/3236343972_preview_steamuserimages-a.akamaihd6.jpg",
+      ],
+      requirement: "",
+    },
+    {
+      id: 42,
+      name: "The Most Dangerous Game",
+      trader: "",
+      description:
+        "Ascertain the true nature of the VIP section, Retrieve intel about Hunter's Paradise VIP program - Coordinate (159; 168)",
+      images: [
+        "/images/quest/42/3236343972_preview_K.jpg",
+        "/images/quest/42/3236343972_preview_The Most Dangerous Game.jpg",
+        "/images/quest/42/3236343972_preview_L.jpg",
+        "/images/quest/42/3236343972_preview_LL.jpg",
+      ],
+      requirement: "",
+    },
+    {
+      id: 43,
+      name: "A Single Drop",
+      trader: "",
+      description:
+        "Check the first tanker truck - Coordinate (182; 156), Check the second tanker truck - Coordinate (183; 158), Check the third tanker truck - Coordinate (183; 158)",
+      images: [
+        "/images/quest/43/3236343972_preview_MM.jpg",
+        "/images/quest/43/3236343972_preview_N.jpg",
+        "/images/quest/43/3236343972_preview_NN.jpg",
+      ],
+      requirement: "",
+    },
+    {
+      id: 44,
+      name: "Living In Burrows",
+      trader: "",
+      description:
+        "In the bunker. Check the state of the water filtration unit, Check the state of the generator - Coordinate (142; 121)",
+      images: [
+        "/images/quest/44/3236343972_preview_27.jpg",
+        "/images/quest/44/3236343972_preview_AAAAA.png",
+        "/images/quest/44/3236343972_preview_ABV.png",
+
+      ],
+      requirement: "You need YBL-1 GENERATOR ROOM KEY",
+    },
+    {
+      id: 45,
+      name: "Manifest Destiny",
+      trader: "",
+      description: "Find the database on the computer - Coordinate (182; 158)",
+      images: [
+        "/images/quest/45/3236343972_preview_ABB.jpg",
+        "/images/quest/45/3236343972_preview_ABA.jpg",
+
+      ],
+      requirement: "",
+    },
+    {
+      id: 46,
+      name: "Night Ocean",
+      trader: "",
+      description:
+        "You have to kill the boss in the area - Coordinate (203; 116)",
+      images: [
+        "/images/quest/46/3236343972_preview_M (1).jpg",
+
+      ],
+      requirement: "",
+    },
+    {
+      id: 47,
+      name: "Final Checkout",
+      trader: "",
+      description: "Coordinate (183; 158)",
+      images: [
+        "/images/quest/47/3236343972_preview_ABC.jpg",
+
+      ],
+      requirement: "",
+    },
+    {
+      id: 48,
+      name: "What Comes Up",
+      trader: "",
+      description:
+        "Find the black box on the crash plane - Coordinate (192; 152)",
+      images: [
+        "/images/quest/48/3236343972_preview_ABE.jpg",
+        "/images/quest/48/3236343972_preview_ABD.jpg",
+      ],
+      requirement: "",
+    },
+    {
+      id: 49,
+      name: "Too Close to the Sun",
+      trader: "",
+      description: "Coordinate (192; 152)",
+      images: [
+        "/images/quest/49/3236343972_preview_ABE (1).jpg",
+        "/images/quest/49/3236343972_preview_ABD.jpg",
+
+      ],
+      requirement: "",
+    },
+    {
+      id: 50,
+      name: "Business Or Pleasure",
+      trader: "",
+      description:
+        "It's a flashdrive on a wooden table with a grey tarp covering it next to a small military laptop - Coordinate (183; 158)",
+      images: [
+        "/images/quest/50/3236343972_preview_ABF.jpg",
+
+      ],
+      requirement: "",
+    },
+    {
+      id: 51,
+      name: "Last Flight",
+      trader: "",
+      description:
+        "There's a plane crash and you need to interact with the pilot's body - Coordinate (185; 155)",
+      images: [
+        "/images/quest/51/3236343972_preview_ABG.jpg",
+        "/images/quest/51/3236343972_preview_ABH.jpg",
+
+      ],
+      requirement: "",
+    },
+    {
+      id: 52,
+      name: "I Went, I Saw, I Conquered I",
+      trader: "",
+      description: "Coordinate (138; 143)",
+      images: [
+        "/images/quest/52/3236343972_preview_27 2.jpg",
+        "/images/quest/52/3236343972_preview_27 2.jpg",
+        "/images/quest/52/3236343972_preview_27 2.jpg",
+        "/images/quest/52/3236343972_preview_27 2.jpg",
+      ],
+      requirement: "",
+    },
+    {
+      id: 53,
+      name: "I Went, I Saw, I Conquered II",
+      trader: "",
+      description:
+        "Just move around all the Buildings in the Sawmill and you'll eventually complete the task, make sure to find Keys because there's pretty good loot rooms",
+      images: [
+        "/images/quest/53/3236343972_preview_27 2.jpg",
+        "/images/quest/53/3236343972_preview_27 2.jpg",
+        "/images/quest/53/3236343972_preview_27 2.jpg",
+        "/images/quest/53/3236343972_preview_27 2.jpg",
+      ],
+      requirement: "",
+    },
+    {
+      id: 54,
+      name: "When a Tree Falls",
+      trader: "",
+      description: "Coordinate (138; 143)",
+      images: [
+        "/images/quest/54/3236343972_preview_27 2.jpg",
+        "/images/quest/54/3236343972_preview_27 2.jpg",
+        "/images/quest/54/3236343972_preview_27 2.jpg",
+        "/images/quest/54/3236343972_preview_27 2.jpg",
+      ],
+      requirement: "",
+    },
+    {
+      id: 55,
+      name: "Fuel Shortage",
+      trader: "",
+      description: "Coordinate (139; 144)",
+      images: [
+        "/images/quest/55/3236343972_preview_27 2.jpg",
+        "/images/quest/55/3236343972_preview_27 2.jpg",
+        "/images/quest/55/3236343972_preview_27 2.jpg",
+        "/images/quest/55/3236343972_preview_27 2.jpg",
+      ],
+      requirement: "",
+    },
+    {
+      id: 56,
+      name: "I Went, I Saw, I Conquered III",
+      trader: "",
+      description: "",
+      images: [
+        "/images/quest/56/3236343972_preview_27 2.jpg",
+        "/images/quest/56/3236343972_preview_27 2.jpg",
+        "/images/quest/56/3236343972_preview_27 2.jpg",
+        "/images/quest/56/3236343972_preview_27 2.jpg",
+      ],
+      requirement: "",
+    },
+    {
+      id: 57,
+      name: "Invaders From Afar",
+      trader: "",
+      description:
+        "Lead location - Coordinate (139; 144), Medic's Note - Coordinate (139; 144)",
+      images: [
+        "/images/quest/57/3236343972_preview_27 2.jpg",
+        "/images/quest/57/3236343972_preview_27 2.jpg",
+        "/images/quest/57/3236343972_preview_27 2.jpg",
+        "/images/quest/57/3236343972_preview_27 2.jpg",
+      ],
+      requirement: "",
+    },
+    {
+      id: 58,
+      name: "Timber",
+      trader: "",
+      description:
+        "You have to kill the boss. Patrols the north-east/East area of the Sawmill as well as inside the large building in north-east. Can get an angle from the overlook, near LZ Echo 2 during his patrol.",
+      images: [
+        "/images/quest/58/3236343972_preview_27 2.jpg",
+        "/images/quest/58/3236343972_preview_27 2.jpg",
+        "/images/quest/58/3236343972_preview_27 2.jpg",
+        "/images/quest/58/3236343972_preview_27 2.jpg",
+      ],
+      requirement: "",
+    },
+    {
+      id: 59,
+      name: "EOD",
+      trader: "",
+      description: "Inside offices, Need SM OFC key - Coordinate (139; 144)",
+      images: [
+        "/images/quest/59/3236343972_preview_27 2.jpg",
+        "/images/quest/59/3236343972_preview_27 2.jpg",
+        "/images/quest/59/3236343972_preview_27 2.jpg",
+        "/images/quest/59/3236343972_preview_27 2.jpg",
+      ],
+      requirement: "",
+    },
+    {
+      id: 60,
+      name: "Forth Narith Stroll",
+      trader: "",
+      description:
+        "Airfield - Coordinate (141; 126), Fuel Supply - Coordinate (146; 127), Main - Coordinate (145; 130), Barracks - Coordinate (143; 131)",
+      images: [
+        "/images/quest/60/3236343972_preview_27 2.jpg",
+        "/images/quest/60/3236343972_preview_27 2.jpg",
+        "/images/quest/60/3236343972_preview_27 2.jpg",
+        "/images/quest/60/3236343972_preview_27 2.jpg",
+      ],
+      requirement: "",
+    },
+    {
+      id: 61,
+      name: "Missing Colleague I",
+      trader: "",
+      description: "Coordinate (145; 129)",
+      images: [
+        "/images/quest/61/3236343972_preview_27 2.jpg",
+        "/images/quest/61/3236343972_preview_27 2.jpg",
+        "/images/quest/61/3236343972_preview_27 2.jpg",
+        "/images/quest/61/3236343972_preview_27 2.jpg",
+      ],
+      requirement: "",
+    },
+    {
+      id: 62,
+      name: "Evacuation Question",
+      trader: "",
+      description: "Room A 112 - Coordinate (141; 131)",
+      images: [
+        "/images/quest/62/3236343972_preview_27 2.jpg",
+        "/images/quest/62/3236343972_preview_27 2.jpg",
+        "/images/quest/62/3236343972_preview_27 2.jpg",
+        "/images/quest/62/3236343972_preview_27 2.jpg",
+      ],
+      requirement: "",
+    },
+    {
+      id: 63,
+      name: "Missing Colleague II",
+      trader: "",
+      description: "Coordinate (143; 129)",
+      images: [
+        "/images/quest/63/3236343972_preview_27 2.jpg",
+        "/images/quest/63/3236343972_preview_27 2.jpg",
+        "/images/quest/63/3236343972_preview_27 2.jpg",
+        "/images/quest/63/3236343972_preview_27 2.jpg",
+      ],
+      requirement: "",
+    },
+    {
+      id: 64,
+      name: "Neighbourly Help",
+      trader: "",
+      description: "Gauge 1, Gauge 2 - Coordinate (145; 126)",
+      images: [
+        "/images/quest/64/3236343972_preview_27 2.jpg",
+        "/images/quest/64/3236343972_preview_27 2.jpg",
+        "/images/quest/64/3236343972_preview_27 2.jpg",
+        "/images/quest/64/3236343972_preview_27 2.jpg",
+      ],
+      requirement: "",
+    },
+    {
+      id: 65,
+      name: "Line In The Sand",
+      trader: "",
+      description:
+        "Coordinate (205; 137), Line In The Sand Pier - Coordinate (206; 137)",
+      images: [
+        "/images/quest/65/3236343972_preview_27 2.jpg",
+        "/images/quest/65/3236343972_preview_27 2.jpg",
+        "/images/quest/65/3236343972_preview_27 2.jpg",
+        "/images/quest/65/3236343972_preview_27 2.jpg",
+      ],
+      requirement: "",
+    },
   ],
   specific: {
     crimson: [
@@ -101,10 +715,7 @@ const quests = {
         id: 7,
         name: "Medical Detective",
         trader: "Gunny",
-        description: [
-          "Medical Detective Coordinate (141; 166)",
-         
-        ],
+        description: ["Medical Detective Coordinate (141; 166)"],
         images: [
           "/images/quest/crimson/quest7/3236343972_preview_11.jpg",
           "/images/quest/crimson/quest7/3236343972_preview_10bis - Medical Detective Location - 141 166.jpg",

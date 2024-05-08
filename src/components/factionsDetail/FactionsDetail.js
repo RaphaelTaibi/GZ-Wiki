@@ -4,9 +4,10 @@ import quests from "../../data/quest";
 import { useFaction } from "../../context/FactionContext";
 import { getFactionData } from "../../service/factionService";
 
+
 function FactionDetail() {
   const { factionId } = useParams();
-  const { resetFaction } = useFaction();
+  const { setFaction, resetFaction } = useFaction();
   const navigate = useNavigate();
 
   const [factionInfo, setFactionInfo] = useState({});
@@ -15,6 +16,7 @@ function FactionDetail() {
 
   useEffect(() => {
     if (factionId && factionId.toLowerCase() !== "common") {
+      setFaction(factionId);
       const data = getFactionData(factionId);
       if (data) {
         setFactionInfo(data);
@@ -23,8 +25,8 @@ function FactionDetail() {
         navigate("*");
       }
     }
-  }, [factionId, navigate]);
-
+  }, [factionId, navigate, setFaction]);
+  console.log("Faction Detail:", {factionId});
   const handleReset = () => {
     resetFaction();
     navigate("/quests");
