@@ -26,7 +26,7 @@ function QuestDetail() {
   if (!questData) {
     console.error("Quest not found or missing faction", faction, questId);
     navigate("*");
-    return <p>Quest or data not found.</p>;
+    return <p>Quest or data not found.</p>
   }
 
   const traderKey = Object.keys(traders).find(

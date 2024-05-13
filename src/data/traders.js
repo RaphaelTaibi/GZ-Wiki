@@ -37,7 +37,7 @@ const traders = {
   trader6: {
     name: "James Miller",
     alias: "Banshee",
-    imageUrl: "/images/traders/trader6.webp",
+    imageUrl: "/images/traders/trader6.jpg",
     sell: "Sells: Various items. Contact for details.",
     buy: "Buys: Weapons, Ammunition, Magazines, Weapon Parts, and Containers.",
   },

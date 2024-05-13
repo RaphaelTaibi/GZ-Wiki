@@ -19,7 +19,7 @@ const quests = {
     {
       id: 18,
       name: "New Neighbours Intel",
-      trader: "",
+      trader: "Handshake",
       description: " New Neighbours Intel Location - 142 121",
       images: [
         "/images/quest/18/3236343972_preview_27.jpg",
@@ -30,7 +30,7 @@ const quests = {
     {
       id: 19,
       name: "The Shadow Over Ban Pa I",
-      trader: "",
+      trader: "Handshake",
       description: [
         "The Shadow Over Ban Pa | SOUTHERN - 204 136",
         "The Shadow Over Ban Pa | NORTHERN - 205 138",
@@ -70,7 +70,7 @@ const quests = {
     {
       id: 22,
       name: "True Grit",
-      trader: "",
+      trader: "Handshake",
       description: "Coordinate (160; 167)",
       images: [
         "/images/quest/22/3236343972_preview_-32.jpg",
@@ -83,7 +83,7 @@ const quests = {
     {
       id: 23,
       name: "It's In The Water I",
-      trader: "",
+      trader: "Lab Rat",
       description:
         "Collect avian tissue samples - Coordinate (205; 136), Collect water samples from a well - Coordinate (205; 137), Collect ground samples from a mound of soil - Coordinate (206; 137)",
       images: [
@@ -99,7 +99,7 @@ const quests = {
     {
       id: 24,
       name: "Uninvited Guests",
-      trader: "",
+      trader: "Turncoat",
       description: "Coordinate (205; 137)",
       images: ["/images/quest/24/3236343972_preview_103.jpg"],
       requirement: "You have to kill 20 bots in Ban Pa",
@@ -107,7 +107,7 @@ const quests = {
     {
       id: 25,
       name: "Save The Rebellion",
-      trader: "",
+      trader: "Artisan",
       description:
         "Collect the flash drive at the command tent in the Base Camp, Place the flash drive in the guardhouse",
       images: [
@@ -121,7 +121,7 @@ const quests = {
     {
       id: 26,
       name: "Shortcut",
-      trader: "",
+      trader: "Handshake",
       description: "In the bunker at -2 in the debris - Coordinate (142; 121)",
       images: [
         "/images/quest/26/3236343972_preview_image_2024-05-02_161627082.png",
@@ -131,7 +131,7 @@ const quests = {
     {
       id: 27,
       name: "Warm Welcome",
-      trader: "",
+      trader: "Turncoat",
       description: "Coordinate (204; 136)",
       images: [
         "/images/quest/27/3236343972_preview_C.jpg",
@@ -143,7 +143,7 @@ const quests = {
     {
       id: 28,
       name: "At The Mounds Of Madness Part.1",
-      trader: "",
+      trader: "Artisan",
       description:
         "Find an ominous mural - Coordinate (205; 135), Find an eerie mural - Coordinate (204; 137), Find a chilling mural - Coordinate (206; 138), Find a disturbing statue - Coordinate (207; 137)",
       images: [
@@ -164,7 +164,7 @@ const quests = {
     {
       id: 29,
       name: "At The Mounds Of Madness Part.2",
-      trader: "",
+      trader: "Artisan",
       description: "Coordinate (205; 137)",
       images: [
         "/images/quest/29/3236343972_preview_EE.jpg",
@@ -175,7 +175,7 @@ const quests = {
     {
       id: 30,
       name: "The Shadow Over Ban Part.2",
-      trader: "",
+      trader: "Handshake",
       description: "Coordinate (205; 137)",
       images: [
         "/images/quest/30/3236343972_preview_EE (1).jpg",
@@ -186,7 +186,7 @@ const quests = {
     {
       id: 31,
       name: "Shooting Gallery",
-      trader: "",
+      trader: "Handshake",
       description: "Coordinate (159; 168)",
       images: ["/images/quest/31/3236343972_preview_F.jpg"],
       requirement: "You have to kill 20 bots at Hunter's Paradise",
@@ -194,7 +194,7 @@ const quests = {
     {
       id: 32,
       name: "The Brave",
-      trader: "",
+      trader: "Lab Rat",
       description:
         "Behind the body on post at the ground - Coordinate (159; 168)",
       images: [
@@ -206,7 +206,7 @@ const quests = {
     {
       id: 33,
       name: "Up To Snuff",
-      trader: "",
+      trader: "Handshake",
       description:
         "In the building on the desk at the right - Coordinate (160; 168)",
       images: [
@@ -219,7 +219,7 @@ const quests = {
     {
       id: 34,
       name: "Final Liberation",
-      trader: "",
+      trader: "Turncoat",
       description:
         "You have to kill the boss with a blue Bandana in the bunker - Coordinate (142; 121)",
       images: [
@@ -231,7 +231,7 @@ const quests = {
     {
       id: 35,
       name: "Check Out Computers",
-      trader: "",
+      trader: "Lab Rat",
       description: "In the bunker at -2 / Server room - Coordinate (142; 121)",
       images: [
         "/images/quest/35/3236343972_preview_27 (1).jpg",
@@ -243,7 +243,7 @@ const quests = {
     {
       id: 36,
       name: "It's In The Water II",
-      trader: "",
+      trader: "Lab Rat",
       description: "Coordinate (205; 137)",
       images: [
         "/images/quest/36/3236343972_preview_EE.jpg",
@@ -265,7 +265,7 @@ const quests = {
     {
       id: 38,
       name: "Duty To The Country",
-      trader: "",
+      trader: "Lab Rat",
       description:
         "You are able to drop down through the ventilation-shaft from outside, outside the wall on the western side, there is a small fenced-off area with an open gate where you can drop down into the bunker to get directly into the correct area of the bunker - Coordinate (142; 122)",
       images: [
@@ -279,7 +279,7 @@ const quests = {
     {
       id: 39,
       name: "Rebel Scum",
-      trader: "",
+      trader: "Handshake",
       description: "You have to kill 20 bots in the bunker - Coordinate (142; 121)",
       images: ["/images/quest/39/3236343972_preview_27.jpg"],
       requirement: "",
@@ -287,7 +287,7 @@ const quests = {
     {
       id: 40,
       name: "One Shot One Kill",
-      trader: "",
+      trader: "Handshake",
       description:
         "You have to kill the boss with a Cap and purple tee-shirt at Hunter's Paradise. The boss patrols the area around Shooting-range and Restaurant - Coordinate (159; 168)",
       images: [
@@ -300,7 +300,7 @@ const quests = {
     {
       id: 41,
       name: "Carnivore",
-      trader: "",
+      trader: "Lab Rat",
       description:
         "The refrigerator in the back of the restaurant bottom left corner. In there look at the 'food' in the top shelf of the fridge - Coordinate (159; 168)",
       images: [
@@ -313,7 +313,7 @@ const quests = {
     {
       id: 42,
       name: "The Most Dangerous Game",
-      trader: "",
+      trader: "Artisan",
       description:
         "Ascertain the true nature of the VIP section, Retrieve intel about Hunter's Paradise VIP program - Coordinate (159; 168)",
       images: [
@@ -327,7 +327,7 @@ const quests = {
     {
       id: 43,
       name: "A Single Drop",
-      trader: "",
+      trader: "Gunny",
       description:
         "Check the first tanker truck - Coordinate (182; 156), Check the second tanker truck - Coordinate (183; 158), Check the third tanker truck - Coordinate (183; 158)",
       images: [
