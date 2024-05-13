@@ -4,6 +4,7 @@ import quests from "../../data/quest";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import traders from "../../data/traders";
+import { useFaction } from "../../context/FactionContext";
 //import styles from "./QuestDetail.module.scss";
 
 function QuestDetail() {
@@ -11,7 +12,7 @@ function QuestDetail() {
   const navigate = useNavigate();
   const pathSegments = location.pathname.split("/").filter(Boolean);
   const isCommon = pathSegments[1] === "common";
-  const faction = pathSegments[2];
+  const { faction } = useFaction();
   const questId = parseInt(pathSegments[pathSegments.length - 1], 10);
 
   let questData;
@@ -25,7 +26,7 @@ function QuestDetail() {
   if (!questData) {
     console.error("Quest not found or missing faction", faction, questId);
     navigate("*");
-    return <p>Quest or data not found.</p>;
+    return <p>Quest or data not found.</p>
   }
 
   const traderKey = Object.keys(traders).find(
@@ -40,6 +41,9 @@ function QuestDetail() {
     }
   };
 
+  const goToFaction = () => {
+    navigateSafely(`/faction/${faction}`);
+  };
   const goToNextQuest = () => {
     if (questId + 1 <= 16) {
       navigateSafely(`/quests/faction/${faction}/${questId + 1}`);
@@ -47,13 +51,14 @@ function QuestDetail() {
       navigateSafely(`/quests/common/${questId + 1}`);
     }
   };
-
   const goToBackQuest = () => {
-    navigateSafely(
-      questId - 1 >= 1
-        ? `/quests/faction/${faction}/${questId - 1}`
-        : `/faction/${faction}`
-    );
+    if (questId > 17) {
+      navigateSafely(`/quests/common/${questId - 1}`);
+    } else if (questId > 1) {
+      navigateSafely(`/quests/faction/${faction}/${questId - 1}`);
+    } else {
+      goToFaction();
+    }
   };
 
   const goToTrader = () => {
@@ -61,7 +66,7 @@ function QuestDetail() {
   };
 
   return (
-    <div className="flex flex-col items-center mt-16 mb-16 mx-auto p-5 bg-neutral-500 rounded-lg shadow-md max-w-4xl">
+    <div className="flex flex-col items-center mt-16 mb-16 mx-auto p-5 bg-neutral-500 rounded-lg shadow-md max-w-4xl ">
       <h2 className="text-gray-800 text-2xl font-extrabold mb-3">
         Détails de la Quête
       </h2>
@@ -90,7 +95,7 @@ function QuestDetail() {
           Previous
         </button>
         <button
-          onClick={() => navigate(`/faction/${faction}`)}
+          onClick={goToFaction}
           className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
         >
           Back to Faction

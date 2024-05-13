@@ -6,19 +6,32 @@ module.exports = {
   ],
   theme: {
     extend: {
-      colors: {
-        'custom-blue': '#007ace',
-         'custom-gray': {
-        100: '#f5f5f5',
-        800: '#333333',
+      spacing: {
+        '368': '368px',
+        '565': '565px',
+        '268': '268px',
+        '351': '351px',
+        '177': '177px',
+        '30': '30px',
+        '27': '27px',
       },
-    },
-    fontFamily: {
-      sans: ['Segoe UI', 'Tahoma', 'Geneva', 'Verdana', 'sans-serif'],
+      colors: {
+        'background': '#1B1D26',
+        'frame-border': '#3C3F4C',
+        'button-background': '#3C3F4C',
+        'french-blue': '#0052B4',
+        'french-red': '#D80027',
+        'french-white': '#F0F0F0',
+      },
+      fontSize: {
+        'base': '16px',
+      },
+      fontFamily: {
+        'outfit': ['Outfit', 'sans-serif'],
+      },
     },
   },
   plugins: [
       require('@tailwindcss/typography'),
     ],
   }
-}

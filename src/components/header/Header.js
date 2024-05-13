@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 
 function Header() {
   return (
-    <header className="bg-stone-400 text-white flex flex-col items-center px-5 py-3 space-y-3">
+    <header className="bg-black text-white text-opacity-70 flex flex-col items-center px-5 py-3 space-y-3">
       <Link
         to="/"
-        className="text-xl no-underline text-white hover:text-cyan-900"
+        className="text-xl no-underline text-white text-opacity-70 hover:text-cyan-900"
       >
         Gray Zone Warfare Wiki
       </Link>
