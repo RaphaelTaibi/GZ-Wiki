@@ -53,7 +53,8 @@ function TraderDetail() {
   );
 
   return (
-    <div className="flex flex-col items-center p-5">
+    <div className="flex flex-col items-center p-5 ">
+      <div className="bg-neutral-500 shadow-lg rounded-lg w-1/2">
       <h1 className="text-center font-bold text-2xl">{trader.name}</h1>
       <h2 className="text-center font-semibold text-2xl">
         Alias {trader.alias}
@@ -63,19 +64,21 @@ function TraderDetail() {
         alt={`${trader.name} alias ${trader.alias}`}
         className="w-4/5 max-w-xs md:max-w-lg lg:max-w-xl mx-auto my-5 rounded-lg border-2 border-gray-300"
       />
+      <div className="bg-neutral-700 rounded-md m-8 border-frame border shadow-sm space-y-4 py-2 text-center text-white/75">
       <p className="text-center max-w-4/5 mx-auto mb-2 text-lg">
         {trader.sell}
       </p>
       <p className="text-center max-w-4/5 mx-auto mb-2 text-lg">{trader.buy}</p>
+      </div>
       <div className="text-center mt-5">
-        <h3>Quests Available:</h3>
-        <ul className="list-none p-0">
+        <h3 className="text-3xl font-bold underline p-5">Quests Available:</h3>
+        <ul className="list-none p-0 space-y-4">
           {traderFactionQuests.map((quest, index) => (
             <li key={index} className="py-1">
-              <FactionCarousel questId={quest.id} questName={quest.name} />
+              <FactionCarousel questId={quest.id} questName={<p className="underline">{quest.name}</p>} />
             </li>
           ))}
-          <p>
+          <p className="font-bold text-xl">
             !! Task are same coordinate and zone for ALL faction !! care you can
             have PVP
           </p>
@@ -85,6 +88,7 @@ function TraderDetail() {
             </li>
           ))}
         </ul>
+      </div>
       </div>
     </div>
   );
