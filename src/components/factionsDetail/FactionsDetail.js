@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
-import quests from "../../data/quest"; 
+import quests from "../../data/quest";
 import { useFaction } from "../../context/FactionContext";
 import { getFactionData } from "../../service/factionService";
 
@@ -26,7 +26,7 @@ function FactionDetail() {
       }
     }
   }, [factionId, navigate, setFaction]);
-  console.log("Faction Detail:", {factionId});
+  console.log("Faction Detail:", { factionId });
   const handleReset = () => {
     resetFaction();
     navigate("/quests");
@@ -36,30 +36,30 @@ function FactionDetail() {
     <div className="max-w-4xl mx-auto p-5 bg-neutral-500 shadow-lg rounded-lg">
       <div className="flex justify-between items-center mb-5">
         <h1 className="text-3xl font-bold text-center">{factionInfo.name}</h1>
-        <img src={`/images/factions/${factionId.toLowerCase()}.webp`} alt="Faction Logo" className="w-24 h-24 rounded-full" />
+        <img src={`/images/factions/${factionId.toLowerCase()}.webp`} alt="Faction Logo" className="w-24 h-24 rounded-md" />
       </div>
       <div className="bg-neutral-600 p-3 shadow-sm mb-5 rounded-lg">
         <p className="text-white">{factionInfo.description}</p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div>
+        <div className="mx-16">
           <h2 className="text-xl font-semibold mb-3">Specific Quests</h2>
           <ul className="list-none p-0">
             {factionQuests.map((quest, index) => (
               <li key={index} className="mb-2">
-                <Link to={`/quests/faction/${factionId}/${quest.id}`} className="text-white hover:text-cyan-900 block">
+                <Link to={`/quests/faction/${factionId}/${quest.id}`} className="text-white hover:text-cyan-900 block bg-neutral-600 rounded-md w-60 hover:bg-neutral-400  hover:outline-none hover:ring-2 ring-cyan-600 ring-offset-2">
                   {quest.name}
                 </Link>
               </li>
             ))}
           </ul>
         </div>
-        <div>
+        <div className="mx-20">
           <h2 className="text-xl font-semibold mb-3">Common Quests</h2>
           <ul className="list-none p-0">
             {commonQuests.map((quest, index) => (
               <li key={index} className="mb-2">
-                <Link to={`/quests/common/${quest.id}`} className="text-white hover:text-cyan-900 block">
+                <Link to={`/quests/common/${quest.id}`} className="text-white hover:text-cyan-900 block bg-neutral-600 hover:bg-neutral-400 rounded-md w-60 hover:outline-none hover:ring-2 ring-cyan-600 ring-offset-2">
                   {quest.name}
                 </Link>
               </li>
