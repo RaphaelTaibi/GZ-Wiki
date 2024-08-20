@@ -1,6 +1,4 @@
 import React, { useState, useRef, useEffect } from "react";
-//import backgroundImage from "../../assets/images/GrayZone.webp";
-//import styles from "./Home.module.scss";
 import { useNavigate } from "react-router-dom";
 
 const Home = () => {
