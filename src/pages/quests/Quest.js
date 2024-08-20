@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-//import styles from "./Quests.module.scss";
+
 
 function Quests() {
   const [selectedFaction, setSelectedFaction] = useState(null);
 
-  // Handler pour sélectionner une faction
+  //Handler select faction
   const handleSelectFaction = (faction) => {
     setSelectedFaction(faction);
   };
 
-  // Handler pour réinitialiser la sélection de la faction
+  //Handler reset faction
 
 
   return (
@@ -51,7 +51,6 @@ function Quests() {
           </div>
           <div className="flex flex-wrap justify-around mt-5 mb-11 ">
             {Array.from({ length: 6 }, (_, index) => {
-              // Supposons que l'image du trader 6 est en jpg
               const imageFormat = index === 5 ? "jpg" : "webp";
               return (
                 <Link
