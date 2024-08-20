@@ -1,5 +1,4 @@
 import React from "react";
-//import styles from "./Maps.module.scss";
 import MapDetail from "../../components/mapDetail/MapDetail";
 
 function Maps() {
