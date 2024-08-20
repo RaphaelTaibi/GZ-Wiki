@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-
 function Quests() {
   const [selectedFaction, setSelectedFaction] = useState(null);
 
@@ -9,9 +8,6 @@ function Quests() {
   const handleSelectFaction = (faction) => {
     setSelectedFaction(faction);
   };
-
-  //Handler reset faction
-
 
   return (
     <div className="p-5">
