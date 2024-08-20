@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 //import backgroundImage from "../../assets/images/GrayZone.webp";
 //import styles from "./Home.module.scss";
 import { useNavigate } from "react-router-dom";
+
 const Home = () => {
   const [animate, setAnimate] = useState(false);
   const navigate = useNavigate();
@@ -11,11 +12,10 @@ const Home = () => {
     setAnimate(true);
     setTimeout(() => {
       navigate("/social");
-    }, 300); // Assurez-vous que ce délai correspond à la durée de l'animation
+    }, 300); 
   };
 
   useEffect(() => {
-    // Assurez-vous que la vidéo recommence au début lorsque vous arrivez à la fin
     const handleEnd = () => {
       videoRef.current.play();
     };
