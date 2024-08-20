@@ -5,7 +5,6 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import traders from "../../data/traders";
 import { useFaction } from "../../context/FactionContext";
-//import styles from "./QuestDetail.module.scss";
 
 function QuestDetail() {
   const location = useLocation();
